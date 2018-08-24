@@ -1,3 +1,8 @@
 test('console', () => {
-  console.log('sup');
+  // given:
+  const spy = jest.spyOn(global.console, 'log');
+
+  const subject = require('./subject');
+
+  expect(spy).toHaveBeenCalledTimes(1);
 });
